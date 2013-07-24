@@ -10,21 +10,10 @@ Running on OpenShift
 
 Create an account at http://openshift.redhat.com/
 
-Create a nodejs-0.6 application (you can call your application whatever you want)
-
-    rhc app create -a ethercalc -t nodejs-0.6
-
-Add this upstream ethercalc repo
-
-    cd ethercalc
-    git remote add upstream -m master git://github.com/mscherer/ethercalc-openshift.git
-    git pull -s recursive -X theirs upstream master
-    # note that the git pull above can be used later to pull updates to Ethercalc
+Create a nodejs application (using the downloadable cartridge) with this code
+    rhc create-app ethercalc http://bit.ly/145aBI5
+--from-code=https://github.com/matthicksj/ethercalc-openshift
     
-Then push the repo upstream
-
-    git push
-
 That's it, you can now checkout your application at :
 
     http://ethercalc-$yournamespace.rhcloud.com
